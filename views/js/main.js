@@ -16,6 +16,9 @@ Cameron Pittman, Udacity Course Developer
 cameron *at* udacity *dot* com
 */
 
+// Array to reference all types of available pizzas
+// Used in place of calls to document.querySelectorAll()
+var AvailablePizzas=[];
 // Array to reference horizontally moving pizza images on screen
 // Used in place of calls to document.querySelectorAll()
 var items=[];
@@ -454,10 +457,13 @@ var resizePizzas = function(size) {
 
   // Iterates through pizza elements on the page and changes their widths
   function changePizzaSizes(size) {
-    for (var i = 0; i < document.querySelectorAll(".randomPizzaContainer").length; i++) {
-      var dx = determineDx(document.querySelectorAll(".randomPizzaContainer")[i], size);
-      var newwidth = (document.querySelectorAll(".randomPizzaContainer")[i].offsetWidth + dx) + 'px';
-      document.querySelectorAll(".randomPizzaContainer")[i].style.width = newwidth;
+
+    // Get ref to array of available pizzas
+    query = AvailablePizzas;
+    var dx = determineDx(query[0], size);
+    var newwidth = (query[0].offsetWidth + dx) + 'px';
+    for (var i = 0; i < query.length; i++) {
+      query[i].style.width = newwidth;
     }
   }
 
@@ -543,5 +549,6 @@ document.addEventListener('DOMContentLoaded', function() {
   }
   // Save a copy of all data on the pizzas
   items = document.querySelectorAll('.mover');
+  AvailablePizzas = document.querySelectorAll(".randomPizzaContainer");
   updatePositions();
 });
