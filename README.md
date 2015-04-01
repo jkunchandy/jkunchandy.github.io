@@ -1,5 +1,53 @@
 ## Website Performance Optimization portfolio project
 
+To run :
+	1. In a web browser, load index.html.
+		eg. if project contents in c:\portfolio directory -
+			file:///C:/Portfolio/index.html
+
+	2. To order pizza's
+			click on "Cam's Pizzeria link"
+				- click on Menu to see available pizzas
+				- click on Our Ingredients	to see ingredient list
+				- click on Locations to get addresses to stores
+				- click on Contact Us to reach us
+				- click on Pick A Pizza to select a pizza and begin the order process
+				- Use the slider to select pizza size - small, medium, large
+
+	3. To enhance your Mobile Web Development Skills
+	4. To enhance your Website Performance Optimization skills
+	5. To Build Your Own 2048
+
+
+Optimizations added:
+	The original code was modified to replace the lethargic screen updates in the
+	following ways:
+	1.  Processing time
+		a.	Problem - Using the scroll bar causes slow screen updates
+			Solution - Added mods to preload all images into an array and reuse as needed
+			           thru the life of the program.  This dramatically reduces the time
+			           cost of repeatedly using document.querySelectorAll() to create an
+			           array of pizza images to be displayed on screen.
+
+			           Additional mods were made to UpdatePositions() to fine tune the
+			           time spent within the main loop in the function.
+
+		b.	Problem - Using the pizza slider to select different pizza size causes heavy
+			          processing time.
+			Solution - Modified changePizzaSizes() to fine tune time spent in
+					   main loop of function. Also using preloaded array of pizza images
+					   in lieu of call to document.querySelectorAll().
+
+
+	2.	Load time
+			Problem - PageSpeedInsights identified 2 primary causes of load time delay -
+					  very large images, and java scripts waiting for processing.
+			Solution - Images were made smaller and compressed. Java script files were
+					   inlined and external calls to java script files were given an
+					   async tag to allow parallel processing of possible js files.
+
+
+
 Your challenge, if you wish to accept it (and we sure hope you will), is to optimize this online portfolio for speed! In particular, optimize the critical rendering path and make this page render as quickly as possible by applying the techniques you've picked up in the [Critical Rendering Path course](https://www.udacity.com/course/ud884).
 
 To get started, check out the repository, inspect the code,
@@ -32,7 +80,7 @@ Profile, optimize, measure... and then lather, rinse, and repeat. Good luck!
 
 ####Part 2: Optimize Frames per Second in pizza.html
 
-To optimize views/pizza.html, you will need to modify views/js/main.js until your frames per second rate is 60 fps or higher. You will find instructive comments in main.js. 
+To optimize views/pizza.html, you will need to modify views/js/main.js until your frames per second rate is 60 fps or higher. You will find instructive comments in main.js.
 
 You might find the FPS Counter/HUD Display useful in Chrome developer tools described here: [Chrome Dev Tools tips-and-tricks](https://developer.chrome.com/devtools/docs/tips-and-tricks).
 
