@@ -435,7 +435,9 @@ var resizePizzas = function(size) {
 
   changeSliderLabel(size);
 
-  // Returns the size difference to change a pizza element from one size to another. Called by changePizzaSlices(size).
+/* *********************************************************
+   Returns the size difference to change a pizza element from one size to another.
+ ************************************************************/
   function determineDx (elem, size) {
     var oldwidth = elem.offsetWidth;
     var windowwidth = document.querySelector("#randomPizzas").offsetWidth;
@@ -462,7 +464,10 @@ var resizePizzas = function(size) {
     return dx;
   }
 
-  // Iterates through pizza elements on the page and changes their widths
+/* *********************************************************
+   Iterates through pizza elements on the page and changes their widths
+   Controlled by user selection of pizza size on Pizza page.
+ ************************************************************/
   function changePizzaSizes(size) {
 
     // Get ref to array of available pizzas
@@ -516,7 +521,11 @@ function logAverageFrame(times) {   // times is the array of User Timing measure
 // The following code for sliding background pizzas was pulled from Ilya's demo found at:
 // https://www.igvita.com/slides/2012/devtools-tips-and-tricks/jank-demo.html
 
-// Moves the sliding background pizzas based on scroll position
+/* *********************************************************
+   Moves the sliding background pizzas based on scroll position
+   Initially called when page is loaded. Then called whenever
+   user scrolls thru page.
+ ************************************************************/
 function updatePositions() {
   frame++;
   window.performance.mark("mark_start_frame");
