@@ -1,9 +1,14 @@
 ## Website Performance Optimization portfolio project
 
 To run :
+	For testing purposes, this portfolio directory can be loaded up
+	to a site such as github.com, which will act as the web host.
+	The steps to setup github as the webhost are provided in the
+	following site page: https://pages.github.com/
+	Once the portfolio has been uploaded to the github.io directory,
+	follow the steps below.
 	1. In a web browser, load index.html.
-		eg. if project contents in c:\portfolio directory -
-			file:///C:/Portfolio/index.html
+		eg. if github username is "jk" - http://jk.github.io/
 
 	2. To order pizza's
 			click on "Cam's Pizzeria link"
@@ -15,7 +20,9 @@ To run :
 				- Use the slider to select pizza size - small, medium, large
 
 	3. To enhance your Mobile Web Development Skills
+
 	4. To enhance your Website Performance Optimization skills
+
 	5. To Build Your Own 2048
 
 
