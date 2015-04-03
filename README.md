@@ -7,6 +7,7 @@ To run :
 	following site page: https://pages.github.com/
 	Once the portfolio has been uploaded to the github.io directory,
 	follow the steps below.
+	
 	1. In a web browser, load index.html.
 		eg. if github username is "jk" - http://jk.github.io/
 
@@ -29,6 +30,7 @@ To run :
 Optimizations added:
 	The original code was modified to replace the lethargic screen updates in the
 	following ways:
+	
 	1.  Processing time
 		a.	Problem - Using the scroll bar causes slow screen updates
 			Solution - Added mods to preload all images into an array and reuse as needed
